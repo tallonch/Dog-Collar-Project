@@ -1,36 +1,28 @@
+import com.dogcollarapp.getInfoFromServer;
 import com.dogcollarapp.Coordinates;
 
 public class Controller {
 
+    //This will get the coordinates for the frontend.
     public Coordinates getCoordinates(String serialNumber) {
+            Coordinates coordinates;
+            getInfoFromServer getInfoFromServer = new getInfoFromServer();
 
-        Coordinates coordinates = new Coordinates();
+            //This will get the coordinates and save it to coordinates.
+            coordinates = getInfoFromServer.getCoordinates(serialNumber);
 
-        coordinates.setLatitude(5); // {
-        coordinates.setLongitude(6); // when finished these will be populated by an API call that will have updated values from the database.
-        coordinates.setSerialNumber("First"); // }
+            //Once I can build the code I want to run this to make sure the correct values are returning
+            System.out.println(coordinates.getLatitude() + coordinates.getLongitude() + coordinates.getSerialNumber());
 
-        //Coordinates.setLatitude(API call);
-        //Coordinates.setLongitude(API call);
-        //Coordinates.setSerialNumber(API call);
-
-        System.out.println(coordinates.getLatitude() + coordinates.getLongitude() + coordinates.getSerialNumber());
-        //Once I can build the code I want to run this to make sure the correct values are returning
-
-        return coordinates;
+            return coordinates;
     }
+
 
     // This should update Coordinates I don't think this will be necessary in this project since the app wont need to send its Coordinates
     public void setCoordinates(double longitude,double latitude, String serialNumber){
-        Coordinates coordinates = new Coordinates();
+        getInfoFromServer getInfoFromServer = new getInfoFromServer();
 
-        //This will populate the Coordinates datatype that will then be passed to server
-        coordinates.setLongitude(longitude);
-        coordinates.setLatitude(latitude);
-        coordinates.setSerialNumber(serialNumber);
-
-        // This is where we would send the Coordinates to the server.
-
-
+        //This calls a function that will set the coordinates
+        getInfoFromServer.setCoordinates(longitude, latitude, serialNumber);
     }
 }
