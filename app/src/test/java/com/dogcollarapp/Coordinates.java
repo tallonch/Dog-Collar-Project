@@ -1,6 +1,6 @@
 package com.dogcollarapp;
 
-public class Cordinates {
+public class Coordinates {
 
     private double longitude;
     private double latitude;
@@ -19,10 +19,10 @@ public class Cordinates {
     public void setLongitude(double input) {
         longitude = input;
     }
-    public void setlatitude(double input) {
+    public void setLatitude(double input) {
         latitude = input;
     }
-    public void setserialNumber(String input) {
+    public void setSerialNumber(String input) {
         serialNumber = input;
     }
 }
