@@ -6,7 +6,7 @@ public class getInfoFromServer {
 
         //call server and get coordinates
         coordinates.setLongitude(1);
-        coordinates.setLatitude(2);
+        coordinates.setLatitude(3);
         coordinates.setSerialNumber("cow");
 
         return coordinates;

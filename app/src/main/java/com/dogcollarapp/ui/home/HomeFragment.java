@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.dogcollarapp.Coordinates;
 import com.dogcollarapp.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {
@@ -33,5 +34,9 @@ public class HomeFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    public void getCoordinates(String string) {
+        Coordinates coordinates = com.dogcollarapp.Controller.getCoordinates("cow");
     }
 }
