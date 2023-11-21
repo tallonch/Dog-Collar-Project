@@ -1,4 +1,4 @@
-package com.dogcollarapp;
+package dogcollarapp;
 
 public class Coordinates {
 

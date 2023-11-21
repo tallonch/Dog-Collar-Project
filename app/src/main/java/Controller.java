@@ -1,5 +1,5 @@
-import com.dogcollarapp.getInfoFromServer;
-import com.dogcollarapp.Coordinates;
+import dogcollarapp.getInfoFromServer;
+import dogcollarapp.Coordinates;
 
 public class Controller {
 

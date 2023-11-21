@@ -1,13 +1,13 @@
-package com.dogcollarapp;
+package dogcollarapp;
 
 public class getInfoFromServer {
     public Coordinates getCoordinates(String serialNumber) {
         Coordinates coordinates = new Coordinates();
 
         //call server and get coordinates
-        coordinates.setLongitude(1);
-        coordinates.setLatitude(2);
-        coordinates.setSerialNumber("cow");
+        coordinates.setLongitude(35.2938);
+        coordinates.setLatitude(93.1361);
+        coordinates.setSerialNumber("My dog");
 
         return coordinates;
     }
