@@ -7,6 +7,10 @@ android {
     namespace = "com.dogcollarapp"
     compileSdk = 33
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.dogcollarapp"
         minSdk = 29

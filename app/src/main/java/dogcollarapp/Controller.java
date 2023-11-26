@@ -1,20 +1,18 @@
+package dogcollarapp;//package dogcollarapp;
 import dogcollarapp.getInfoFromServer;
 import dogcollarapp.Coordinates;
 
 public class Controller {
 
     //This will get the coordinates for the frontend.
-    public Coordinates getCoordinates(String serialNumber) {
-            Coordinates coordinates;
-            getInfoFromServer getInfoFromServer = new getInfoFromServer();
+    public static Coordinates getCoordinates(String serialNumber) {
+        Coordinates coordinates;
+        getInfoFromServer getInfoFromServer = new getInfoFromServer();
 
-            //This will get the coordinates and save it to coordinates.
-            coordinates = getInfoFromServer.getCoordinates(serialNumber);
+        //This will get the coordinates and save it to coordinates.
+        coordinates = getInfoFromServer.getCoordinates(serialNumber);
 
-            //Once I can build the code I want to run this to make sure the correct values are returning
-            System.out.println(coordinates.getLatitude() + coordinates.getLongitude() + coordinates.getSerialNumber());
-
-            return coordinates;
+        return coordinates;
     }
 
 

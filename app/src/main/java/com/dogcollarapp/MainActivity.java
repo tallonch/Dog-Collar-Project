@@ -1,8 +1,11 @@
 package com.dogcollarapp;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.annotation.NonNull;
@@ -17,6 +20,9 @@ import com.dogcollarapp.databinding.ActivityMainBinding;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 
+import dogcollarapp.Coordinates;
+import dogcollarapp.Controller;
+
 
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback{
 
@@ -28,6 +34,17 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        binding.GetCoordinates.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View v){
+                Coordinates coordinates = dogcollarapp.Controller.getCoordinates("cow");
+                binding.textView.setText(coordinates.getLatitude() + " " + coordinates.getLongitude() + " " + coordinates.getSerialNumber());
+                //binding.maps.
+            }
+        });
+
+
 
         /*BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
@@ -46,6 +63,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
-
+        Coordinates coordinates = dogcollarapp.Controller.getCoordinates("cow");
+        googleMap.addMarker(new MarkerOptions()
+                .position(new LatLng(coordinates.getLatitude(), coordinates.getLongitude())).title("Marker"));
     }
 }

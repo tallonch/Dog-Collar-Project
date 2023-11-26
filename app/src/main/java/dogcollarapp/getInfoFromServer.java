@@ -1,13 +1,17 @@
 package dogcollarapp;
 
+
+
 public class getInfoFromServer {
     public Coordinates getCoordinates(String serialNumber) {
         Coordinates coordinates = new Coordinates();
 
         //call server and get coordinates
-        coordinates.setLongitude(35.2938);
-        coordinates.setLatitude(93.1361);
-        coordinates.setSerialNumber("My Dog");
+        coordinates.setLatitude(35.2938);
+        coordinates.setLongitude(-93.1361);
+        coordinates.setSerialNumber("cow");
+
+        //const {LatLng} = await google.maps.importLibrary("core");
 
         return coordinates;
     }
