@@ -2,9 +2,9 @@ package com.dogcollarapp;
 
 public class Coordinates {
 
-    private double longitude;
-    private double latitude;
-    private String serialNumber;
+    private double longitude = 0;
+    private double latitude = 0;
+    private String serialNumber = "False";
 
     public double getLongitude(){
         return longitude;

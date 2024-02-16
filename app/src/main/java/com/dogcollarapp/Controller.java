@@ -10,6 +10,7 @@ public class Controller {
         getInfoFromServer getInfoFromServer = new getInfoFromServer();
 
         //This will get the coordinates and save it to coordinates.
+
         coordinates = getInfoFromServer.getCoordinates(serialNumber);
 
         return coordinates;
