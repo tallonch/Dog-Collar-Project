@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// Testing Git force push
+// Testing force push to Git
 
 void main() {
   runApp(const MyApp());
