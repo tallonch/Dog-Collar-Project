@@ -3,6 +3,11 @@
         android:label="gps_dog_collar_flutter"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+
+        <!-- Google Maps API key -->
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDTUyPejWyu-0ambG2BNq4iJ8rmfUJryvk"/>
+
         <activity
             android:name=".MainActivity"
             android:exported="true"

@@ -1,17 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
-  MyApp({super.key});
+  const MyApp({super.key});
 
   @override
   State<MyApp> createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
+  late GoogleMapController mapController;
+
+  final LatLng _center = const LatLng(35.2938, -93.1361);
+
+  void _onMapCreated(GoogleMapController controller) {
+    mapController = controller;
+  }
+
   String buttonName = 'Click';
   int currentIndex = 0;
 
@@ -20,32 +30,20 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        useMaterial3: true,
+        colorSchemeSeed: Colors.deepPurple,
+      ),
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Spot On'),
+          elevation: 2,
         ),
-        body: Center(
-          child: Column(
-            children: [
-              ElevatedButton(
-                onPressed: (){
-                  setState(() {
-                    print('Print something');
-                    buttonName = 'Clicked';
-                  });
-                },
-                child: Text(buttonName),
-              ),
-              ElevatedButton(
-                onPressed: (){
-                  setState(() {
-                    print('Print something');
-                    buttonName = 'Clicked';
-                  });
-                },
-                child: Text(buttonName),
-              ),
-            ],
+        body: GoogleMap(
+          onMapCreated: _onMapCreated,
+          initialCameraPosition: CameraPosition(
+            target: _center,
+            zoom: 15.0,
           ),
         ),
         bottomNavigationBar: BottomNavigationBar(
