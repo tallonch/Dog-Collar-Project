@@ -49,12 +49,16 @@ class _MyAppState extends State<MyApp> {
         bottomNavigationBar: BottomNavigationBar(
           items: const [
             BottomNavigationBarItem(
+              label: 'Settings',
+              icon: Icon(Icons.settings),
+            ),
+            BottomNavigationBarItem(
               label: 'Home',
               icon: Icon(Icons.home),
             ),
             BottomNavigationBarItem(
-              label: 'Settings',
-              icon: Icon(Icons.settings),
+              label: 'Dogs',
+              icon: Icon(Icons.account_tree_outlined),
             ),
           ],
           currentIndex: currentIndex,
