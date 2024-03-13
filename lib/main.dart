@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'screens/map.dart';
+import 'screens/profile.dart';
+import 'screens/collar_management.dart';
 
 
 void main() {
@@ -14,16 +16,13 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  late GoogleMapController mapController;
-
-  final LatLng _center = const LatLng(35.2938, -93.1361);
-
-  void _onMapCreated(GoogleMapController controller) {
-    mapController = controller;
-  }
-
   String buttonName = 'Click';
   int currentIndex = 0;
+  final screens = [
+    const Center(child: Profile()),
+    const Center(child: Map()),
+    const Center(child: Collar_Management()),
+  ];
 
   // This widget is the root of your application.
   @override
@@ -36,28 +35,26 @@ class _MyAppState extends State<MyApp> {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Spot On'),
+          title: const Text('Spot On', style: TextStyle(color: Colors.white),),
           elevation: 2,
+          backgroundColor: Colors.deepPurple,
         ),
-        body: GoogleMap(
-          onMapCreated: _onMapCreated,
-          initialCameraPosition: CameraPosition(
-            target: _center,
-            zoom: 15.0,
-          ),
-        ),
+        body: screens[currentIndex],
         bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Colors.deepPurple,
+          selectedItemColor: Colors.white,
+          unselectedItemColor: Colors.white60,
           items: const [
             BottomNavigationBarItem(
-              label: 'Settings',
-              icon: Icon(Icons.settings),
+              label: 'Profile',
+              icon: Icon(Icons.account_circle),
             ),
             BottomNavigationBarItem(
               label: 'Home',
               icon: Icon(Icons.home),
             ),
             BottomNavigationBarItem(
-              label: 'Dogs',
+              label: 'Collars',
               icon: Icon(Icons.account_tree_outlined),
             ),
           ],
