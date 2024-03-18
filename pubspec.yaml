@@ -39,6 +39,7 @@ dependencies:
   http: ^1.2.1
   json_serializable: ^6.7.1
   google_maps_flutter_web: ^0.5.5
+  flutter_settings_screen_ex: ^0.0.1+5
 
 dev_dependencies:
   flutter_test:
