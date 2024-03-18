@@ -21,7 +21,7 @@ class _MyAppState extends State<MyApp> {
   final screens = [
     const Center(child: Profile()),
     const Center(child: Map()),
-    const Center(child: Collar_Management()),
+    Center(child: Collar_Management()),
   ];
 
   // This widget is the root of your application.
