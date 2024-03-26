@@ -23,54 +23,29 @@ class Collar_Management extends StatelessWidget{
             itemBuilder: (context, index) {
               return CollarListitem(child: _collar_name[index],);
             }),
-        // Center(
-        //   child: Row(
-        //       children: <Widget>[
-        //         const Expanded(
-        //           flex: 1,
-        //           child: Column(),
-        //         ),
-        //         Expanded(
-        //             flex: 8,
-        //             child:
-        //               Column(
-        //                 children: [
-        //                   ElevatedButton.icon(
-        //                     onPressed: () {
-        //                       print("Edit Collar Button Pressed");
-        //                     },
-        //                     icon: const Icon(
-        //                       Icons.edit,
-        //                       color: Colors.white,
-        //                       size: 30,
-        //                     ),
-        //                     style: ElevatedButton.styleFrom(
-        //                       shape: RoundedRectangleBorder(
-        //                           borderRadius: BorderRadius.circular(5.0)
-        //                       ),
-        //                       minimumSize: Size(double.infinity, 50),
-        //                       padding: EdgeInsets.all(10),
-        //                     ),
-        //                     label: Text("Edit Collar"),
-        //                   ),
-        //                 ],
-        //               ),
-        //         ),
-        //         const Expanded(
-        //           flex: 1,
-        //           child: Column(),
-        //         ),
-        //       ]
-        //   ),
-        // ),
-        floatingActionButton: FloatingActionButton.extended(
-          onPressed: () {
-            print("Add Collar Button Pressed");
-          },
-          backgroundColor: Colors.deepPurple,
-          icon: const Icon(Icons.add, color: Colors.white,),
-          label: const Text("Add Collar", style: TextStyle(color: Colors.white)),
-          elevation: 3,
+        
+        floatingActionButton: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: FloatingActionButton.extended(
+            backgroundColor: Colors.deepPurple,
+            icon: const Icon(
+              Icons.add,
+              color: Colors.white,
+              size: 25,
+            ),
+            label: const Text(
+                "Add Collar",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                )
+            ),
+            elevation: 3,
+            extendedPadding: EdgeInsets.all(40),
+            onPressed: () {
+              print("Add Collar Button Pressed");
+            },
+          ),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
 
