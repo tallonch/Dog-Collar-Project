@@ -32,6 +32,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         useMaterial3: true,
         colorSchemeSeed: Colors.deepPurple,
+        scaffoldBackgroundColor: Colors.blueGrey[950],
       ),
       home: Scaffold(
         appBar: AppBar(

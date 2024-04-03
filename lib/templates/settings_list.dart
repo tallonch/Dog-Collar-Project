@@ -9,6 +9,7 @@ class SettingsList extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 10.0),
       child: Container(
+        width: 500,
         height: 50,
         color: Colors.amberAccent[400],
         child: Center(
