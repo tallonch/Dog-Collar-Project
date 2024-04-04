@@ -19,7 +19,7 @@ class _MyAppState extends State<MyApp> {
   String buttonName = 'Click';
   int currentIndex = 0;
   final screens = [
-    const Center(child: Profile()),
+    Center(child: Profile()),
     const Center(child: Map()),
     Center(child: Collar_Management()),
   ];
@@ -32,6 +32,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         useMaterial3: true,
         colorSchemeSeed: Colors.deepPurple,
+        scaffoldBackgroundColor: Colors.blueGrey[950],
       ),
       home: Scaffold(
         appBar: AppBar(
