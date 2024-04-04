@@ -61,10 +61,17 @@ class CollarListitem extends StatelessWidget {
   Future openDialog(BuildContext context) => showDialog(
       context: context,
       builder: (BuildContext context) => AlertDialog(
-        title: const Text('AlertDialog Title'),
-        content: const Text('AlertDialog description'),
+        title: const Text('Edit Collar', style: TextStyle(color: Colors.white),),
+        content: TextField(
+          decoration: InputDecoration(
+            border: UnderlineInputBorder(),
+          ),
+          style: TextStyle(color: Colors.white),
+
+        ),
         backgroundColor: Colors.deepPurple,
-        contentTextStyle: TextStyle(color: Colors.white),
+        contentTextStyle: const TextStyle(color: Colors.white),
+
         actions: <Widget>[
           TextButton(
             onPressed: () => Navigator.pop(context, 'Cancel'),
