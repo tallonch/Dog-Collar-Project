@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\SpotOnAPI.V2.props" />
-</Project>
