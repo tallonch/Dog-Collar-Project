@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'settings/login.dart';
+import 'settings/account.dart';
+import 'settings/notification.dart';
+import 'settings/personalization.dart';
 
 class Profile extends StatelessWidget{
   Profile({super.key});
@@ -21,47 +25,46 @@ class Profile extends StatelessWidget{
                 shape: BoxShape.circle,
                 image: DecorationImage(image: AssetImage('assets/dog-image.jpg')),
               ),
-
             ),
             ListTile(
               title: Text('Account'),
               trailing: Icon(Icons.navigate_next),
               onTap: () {
-                print("Account Button Pressed");
+                Navigator.push(context, MaterialPageRoute(builder: (context) {return Account();},));
               } ,
               splashColor: Colors.amberAccent[400],
+              textColor: Colors.deepPurple,
+              iconColor: Colors.deepPurple,
               ),
             ListTile(
               title: Text('Notifications'),
               trailing: Icon(Icons.navigate_next),
               onTap: () {
-                print("Notifications Button Pressed");
+                Navigator.push(context, MaterialPageRoute(builder: (context) {return NotificationsPage();},));
               } ,
               splashColor: Colors.amberAccent[400],
-              ),
-            ListTile(
-              title: Text('Placeholder'),
-              trailing: Icon(Icons.navigate_next),
-              onTap: () {
-                print("Placeholder Button Pressed");
-              } ,
-              splashColor: Colors.amberAccent[400],
+              textColor: Colors.deepPurple,
+              iconColor: Colors.deepPurple,
               ),
             ListTile(
               title: Text('Personalizations'),
               trailing: Icon(Icons.navigate_next),
               onTap: () {
-                print("Personalizations Button Pressed");
+                Navigator.push(context, MaterialPageRoute(builder: (context) {return PersonalizationPage();},));
               } ,
               splashColor: Colors.amberAccent[400],
+              textColor: Colors.deepPurple,
+              iconColor: Colors.deepPurple,
               ),
             ListTile(
               title: Text('Logout'),
               trailing: Icon(Icons.navigate_next),
               onTap: () {
-                print("Logout Button Pressed");
+                Navigator.push(context, MaterialPageRoute(builder: (context) {return Login();},));
               } ,
               splashColor: Colors.amberAccent[400],
+              textColor: Colors.deepPurple,
+              iconColor: Colors.deepPurple,
               ),
       ])
     );

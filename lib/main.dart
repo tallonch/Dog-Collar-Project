@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_settings_screen_ex/flutter_settings_screen_ex.dart';
+import 'package:gps_dog_collar_flutter/screens/settings/login.dart';
 import 'screens/map.dart';
 import 'screens/profile.dart';
 import 'screens/collar_management.dart';
 
+Future main() async {
+  await Settings.init(cacheProvider:  SharePreferenceCache());
 
-void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -43,8 +46,8 @@ class _MyAppState extends State<MyApp> {
         body: screens[currentIndex],
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Colors.deepPurple,
-          selectedItemColor: Colors.white,
-          unselectedItemColor: Colors.white60,
+          selectedItemColor: Colors.amberAccent[400],
+          unselectedItemColor: Colors.blueGrey[950],
           items: const [
             BottomNavigationBarItem(
               label: 'Profile',
