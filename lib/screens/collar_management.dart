@@ -44,6 +44,7 @@ class Collar_Management extends StatelessWidget{
             extendedPadding: EdgeInsets.all(40),
             onPressed: () {
               print("Add Collar Button Pressed");
+              openDialog(context);
             },
           ),
         ),
@@ -51,4 +52,31 @@ class Collar_Management extends StatelessWidget{
 
     );
   }
+
+  Future openDialog(BuildContext context) => showDialog(
+    context: context,
+    builder: (BuildContext context) => AlertDialog(
+      title: const Text('Add Collar', style: TextStyle(color: Colors.white),),
+      content: TextField(
+        decoration: InputDecoration(
+          border: UnderlineInputBorder(),
+        ),
+        style: TextStyle(color: Colors.white),
+
+      ),
+      backgroundColor: Colors.deepPurple,
+      contentTextStyle: const TextStyle(color: Colors.white),
+
+      actions: <Widget>[
+        TextButton(
+          onPressed: () => Navigator.pop(context, 'Cancel'),
+          child: const Text('Cancel'),
+        ),
+        TextButton(
+          onPressed: () => Navigator.pop(context, 'OK'),
+          child: const Text('OK'),
+        ),
+      ],
+    ),
+  );
 }
