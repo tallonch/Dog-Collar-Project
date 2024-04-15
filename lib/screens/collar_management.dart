@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:gps_dog_collar_flutter/templates/collar_list_item.dart';
 
-class Collar_Management extends StatelessWidget{
-  Collar_Management({super.key});
-  final List _collar_name = [
+class Collar_Management extends StatefulWidget {
+  const Collar_Management({super.key});
+
+  @override
+  State<Collar_Management> createState() => _CollarManagementState();
+}
+
+class _CollarManagementState extends State<Collar_Management> {
+  final _collar_name = [
     'Copper',
     'Piper',
-    'Carmel',
-    'Chai',
-    'Sharkbait',
-    'Ruger',
-    'Cleopatra',
-    'Betsy',
-    'Tank',
   ];
+
+  TextEditingController _AddCollarText = TextEditingController();
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +65,7 @@ class Collar_Management extends StatelessWidget{
           border: UnderlineInputBorder(),
         ),
         style: TextStyle(color: Colors.white),
-
+        controller: _AddCollarText,
       ),
       backgroundColor: Colors.deepPurple,
       contentTextStyle: const TextStyle(color: Colors.white),
@@ -70,11 +73,17 @@ class Collar_Management extends StatelessWidget{
       actions: <Widget>[
         TextButton(
           onPressed: () => Navigator.pop(context, 'Cancel'),
-          child: const Text('Cancel'),
+          child: const Text('Cancel', style: TextStyle(color: Colors.white)),
         ),
         TextButton(
-          onPressed: () => Navigator.pop(context, 'OK'),
-          child: const Text('OK'),
+          onPressed: () {
+            Navigator.pop(context, 'OK');
+            setState(() {
+              _collar_name.add(_AddCollarText.text);
+            });
+            print(_AddCollarText.text);
+          },
+          child: const Text('OK', style: TextStyle(color: Colors.white)),
         ),
       ],
     ),

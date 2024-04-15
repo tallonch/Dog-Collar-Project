@@ -28,9 +28,12 @@ class _MyAppState extends State<Map> {
             zoom: 17.0,
           ),
           markers: {
-            const Marker(
+            Marker(
               markerId: MarkerId('User'),
-              position: LatLng(35.2938, -93.1361)
+              position: LatLng(35.2938, -93.1361),
+              icon: BitmapDescriptor.defaultMarkerWithHue(
+                BitmapDescriptor.hueViolet,
+              )
             )
           },
         ),

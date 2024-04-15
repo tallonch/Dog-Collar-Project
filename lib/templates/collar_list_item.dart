@@ -75,11 +75,14 @@ class CollarListitem extends StatelessWidget {
         actions: <Widget>[
           TextButton(
             onPressed: () => Navigator.pop(context, 'Cancel'),
-            child: const Text('Cancel'),
+            child: const Text('Cancel', style: TextStyle(color: Colors.white)),
           ),
           TextButton(
-            onPressed: () => Navigator.pop(context, 'OK'),
-            child: const Text('OK'),
+            onPressed: () {
+              Navigator.pop(context, 'OK');
+
+            },
+            child: const Text('OK', style: TextStyle(color: Colors.white)),
           ),
         ],
       ),
