@@ -15,7 +15,7 @@ class CollarListitem extends StatelessWidget {
       Container(
         height: 80,
         decoration: BoxDecoration(
-          color: Colors.amberAccent[100],
+          color: Colors.amberAccent[400],
           borderRadius: BorderRadius.circular(25.0),
         ),
         child: Row(
