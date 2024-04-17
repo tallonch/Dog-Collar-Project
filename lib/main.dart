@@ -23,7 +23,7 @@ class _MyAppState extends State<MyApp> {
   int currentIndex = 0;
   final screens = [
     Center(child: Profile()),
-    const Center(child: Map()),
+    const Center(child: CollarMap()),
     Center(child: Collar_Management()),
   ];
 
